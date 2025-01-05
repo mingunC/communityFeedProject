@@ -13,6 +13,10 @@ public class User {
 
 
     public User(Long id, UserInfo userInfo) {
+        if(userInfo == null) {
+            throw new IllegalArgumentException("userInfo cannot be null");
+        }
+
         this.id = id;
         this.info = userInfo;
         this.followingCount = new PositiveIntegerCounter();
